@@ -75,22 +75,22 @@ downloadFile() {
 
 if [ ! -f DOWNLOADS_READY ]; then
   if [ "${DEBUG_MINI_DB}" = "1" ]; then
-    #downloadFile "https://opendata.mmseqs.org/colabfold/mini_swissprot2503.tar.gz" "mini_swissprot2503.tar.gz"
+    echo 'downloadFile "https://opendata.mmseqs.org/colabfold/mini_swissprot2503.tar.gz" "mini_swissprot2503.tar.gz"'
   elif [ "${FAST_PREBUILT_DATABASES}" = "1" ]; then
     # new prebuilt GPU+CPU databases, that don't require calling tsv2exprofiledb
-    #downloadFile "https://opendata.mmseqs.org/colabfold/${UNIREF30DB}.db.tar.gz" "${UNIREF30DB}.tar.gz"
-    #downloadFile "https://opendata.mmseqs.org/colabfold/${CFDB}.db.tar.gz" "${CFDB}.tar.gz"
+    echo 'downloadFile "https://opendata.mmseqs.org/colabfold/${UNIREF30DB}.db.tar.gz" "${UNIREF30DB}.tar.gz"'
+    echo 'downloadFile "https://opendata.mmseqs.org/colabfold/${CFDB}.db.tar.gz" "${CFDB}.tar.gz"'
   else
     # old .tsv + tsv2exprofiledb databases
-    #downloadFile "https://opendata.mmseqs.org/colabfold/${UNIREF30DB}.tar.gz" "${UNIREF30DB}.tar.gz"
-    #downloadFile "https://opendata.mmseqs.org/colabfold/${CFDB}.tar.gz" "${CFDB}.tar.gz"
+    echo 'downloadFile "https://opendata.mmseqs.org/colabfold/${UNIREF30DB}.tar.gz" "${UNIREF30DB}.tar.gz"'
+    echo 'downloadFile "https://opendata.mmseqs.org/colabfold/${CFDB}.tar.gz" "${CFDB}.tar.gz"'
   fi
   if [ "${UNIREF30DB}" = "uniref30_2302" ] && [ "${DEBUG_MINI_DB}" != "1" ]; then
-    #downloadFile "https://opendata.mmseqs.org/colabfold/uniref30_2302_newtaxonomy.tar.gz" "uniref30_2302_newtaxonomy.tar.gz"
+    echo 'downloadFile "https://opendata.mmseqs.org/colabfold/uniref30_2302_newtaxonomy.tar.gz" "uniref30_2302_newtaxonomy.tar.gz"'
   fi
-  #downloadFile "https://opendata.mmseqs.org/colabfold/pdb100_230517.fasta.gz" "pdb100_230517.fasta.gz"
+  echo 'downloadFile "https://opendata.mmseqs.org/colabfold/pdb100_230517.fasta.gz" "pdb100_230517.fasta.gz"'
   if [ ! -f SKIP_TEMPLATES ]; then
-    #downloadFile "https://opendata.mmseqs.org/colabfold/pdb100_foldseek_230517.tar.gz" "pdb100_foldseek_230517.tar.gz"
+    echo 'downloadFile "https://opendata.mmseqs.org/colabfold/pdb100_foldseek_230517.tar.gz" "pdb100_foldseek_230517.tar.gz"'
   fi
   touch DOWNLOADS_READY
 fi
